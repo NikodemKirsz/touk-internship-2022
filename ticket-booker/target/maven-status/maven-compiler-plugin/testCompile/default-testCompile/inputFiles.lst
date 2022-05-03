@@ -1,0 +1,12 @@
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\TicketBookerApplicationTests.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\controller\validator\SurnameValidatorTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\controller\SearchControllerTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\service\ClientServiceTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\TestData.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\converter\StringToLongConverterTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\controller\validator\NameValidatorTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\controller\ReservationControllerTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\converter\StringToTicketTypeConverterTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\controller\converter\StringToZonedDateTimeConverterTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\service\SearchServiceTest.java
+G:\Repozytoria\touk-internship-2022\ticket-booker\src\test\java\com\touk\ticketbooker\service\TicketServiceTest.java
