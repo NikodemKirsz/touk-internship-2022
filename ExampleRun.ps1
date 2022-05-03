@@ -76,7 +76,7 @@ $BodyFailedAgain = @{
 }
 Invoke-RestMethod -Method Post "http://localhost:$port/reservation/1?name=$name&surname=$surname" -Body ($BodyFailedAgain|ConvertTo-Json) -ContentType "application/json" | Format-List
 Start-Sleep 2
-Write-Host "Although his memory isn't great, apparently - seat 18 is already taken (by him himself)" -ForegroundColor $storyColor
+Write-Host "Although his memory isn't great, apparently - seat 18 is already taken (by $name himself)" -ForegroundColor $storyColor
 Start-Sleep 2
 Write-Host "He corrects his mistake and chooses seats: 14, 19, 20" -ForegroundColor $storyColor
 Start-Sleep 1
