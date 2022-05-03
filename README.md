@@ -53,7 +53,7 @@ Image
   <code>***host***/reservation/2?name=Robert&surname=Zieliński</code>
   ```json
   {
-    "10": "ADULT:
+    "10": "ADULT"
     "11": "CHILD"
   }
   ```
