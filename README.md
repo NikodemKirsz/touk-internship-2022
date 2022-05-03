@@ -62,7 +62,7 @@ Program also validates user input and checks, if it agrees with provided busines
 For a testing purpose I wrote a Powershell scripts which uses `Invoke-RestMethod` command for calling the endpoint and also uses .NET library System.String.</br>
 It accepts an optional argument for port number.</br>
 To run it You need to open new Powershell instance in the directory of the repository touk-internship-2022. You can always change the directory with</br>
-        `cd "Path to directory"`</br>
+	`cd "Path to directory"`</br>
 Then run it with</br>
 	<code>.\ExampleRun.ps1 *portNumber*</code></br>
 or in case it does not work, run this command prior to the previous one</br>
@@ -76,7 +76,4 @@ Over the course of developing the application I might have taken a couple of pre
 - All of the rooms have the same capacity (stated in a Constants File)
 - All of the rooms have the same seats structure (stated in a Constants File) and they are rectangular
 - Client's Name and Surname create a unique pair identifying specific client (as stated in the instructions)
-
-
-
-
+- The default initialization data is typed statically, so can be invalid over time (i.e. screening times)
