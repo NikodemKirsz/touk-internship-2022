@@ -57,7 +57,7 @@ public class ReservationController {
         }
 
         Screening screening = searchService.getScreeningById(screeningId);
-        if (isReservationTooLate(screening)) {
+        if (Utils.isReservationTooLate(screening)) {
             throw new TooLateForReservationException(
                     "You can not reserve ticket " + MAX_RESERVATION_TIME_BEFORE_SCREENING + " minutes before the screening!"
             );
@@ -75,12 +75,6 @@ public class ReservationController {
                                 .collect(Collectors.toSet())
                         )
                 );
-    }
-
-    private static boolean isReservationTooLate(Screening screening) {
-        return screening.getTime().isBefore(
-                ZonedDateTime.now(DEFAULT_ZONE_ID).plusMinutes(MAX_RESERVATION_TIME_BEFORE_SCREENING)
-        );
     }
 
     private Set<Ticket> createTicketsFromSeatsToTypesMap(Map<String, String> seatsToTypes, Screening screening, Client client){
@@ -114,72 +108,10 @@ public class ReservationController {
             tickets.add(ticket);
         });
 
-        if (!areRequestedSeatsValid(screening, chosenSeatsIds)) {
+        if (!Utils.areRequestedSeatsValid(screening, chosenSeatsIds)) {
             throw new LonelySeatException("There is a single seat left between taken ones!");
         }
 
         return tickets;
-    }
-
-    private boolean areRequestedSeatsValid(Screening screening, Set<Long> chosenSeatsIds) {
-        final int capacity = ROOM_SEATS_CAPACITY;
-
-        Set<Seat> allSeats = screening.getRoom().getSeats();
-        if (allSeats.size() != capacity) {
-            throw new TicketBookerException("INTERNAL ERROR! Invalid number of seats per room (" + allSeats.size() + ")!");
-        }
-
-        Seat[] allSeatsDaa = new Seat[capacity];
-        for (var seat : allSeats) {
-            int index = (seat.getId().intValue() - 1) % capacity;
-           allSeatsDaa[index] = seat;
-        }
-
-        int freeConsecutive = 0;
-        for (int i = 0; i < capacity; i++) {
-            boolean isFirst = i % ROOM_SEATS_PER_ROW == 0;
-            boolean willBeFree = Utils.isSeatFree(allSeatsDaa[i], screening.getId())
-                            && !chosenSeatsIds.contains((long)(i + 1));
-
-            if (isFirst) {
-                if (freeConsecutive == 1) return false;
-                freeConsecutive = 0;
-            }
-
-            if (!willBeFree) {
-                if (freeConsecutive == 1) return false;
-                freeConsecutive = 0;
-            }
-            else {
-               freeConsecutive++;
-            }
-        }
-
-        return true;
-    }
-
-    private static void printSeating(Screening screening) {
-        final int capacity = ROOM_SEATS_CAPACITY;
-        Set<Seat> allSeats = screening.getRoom().getSeats();
-
-        Seat[] allSeatsDaa = new Seat[capacity];
-        for (var seat : allSeats) {
-            int index = (seat.getId().intValue() - 1) % capacity;
-            allSeatsDaa[index] = seat;
-        }
-
-        for (int i = 0; i < capacity; i++) {
-            char character;
-            if (i % ROOM_SEATS_PER_ROW == 0) System.out.println();
-
-            if (Utils.isSeatFree(allSeatsDaa[i], screening.getId())) {
-                character = '-';
-            }
-            else {
-                character = '+';
-            }
-            System.out.print(character);
-        }
-        System.out.println();
     }
 }
