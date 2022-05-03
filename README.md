@@ -53,7 +53,7 @@ Image
   <code>***host***/reservation/2?name=Robert&surname=Zieliński</code>
   ```json
   {
-    "10": "ADULT:
+    "10": "ADULT"
     "11": "CHILD"
   }
   ```
@@ -65,8 +65,10 @@ To run it You need to open new Powershell instance in the directory of the repos
   `cd "Path to directory"`</br>
 Then run it with</br>
   <code>.\ExampleRun.ps1 *portNumber*</code></br>
-or in case it does not work, use</br>
-  <code>powershell -ExecutionPolicy ByPass -File ".\ExampleRun.ps1" *portNumber*</code></br>
+or in case it does not work, run this command prior to the previous one</br>
+  <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine</code></br>
+if still does not work, run this command prior to the first one</br>
+  <code>Set-ExecutionPolicy -ExecutionPolicy ByPass -Scope LocalMachine</code></br>
   
 ## **Notes & Comments**
 Over the course of developing the application I might have taken a couple of presumptions, and so I'm listing them below:
