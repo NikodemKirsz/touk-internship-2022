@@ -4,7 +4,7 @@ Repository containing recruitment task from TouK for internship 2022.
 ## **Application Info**
 #### **Technical Info**
 The application is running on Java 17 (Oracle OpenJDK v17) and is using Spring Boot Framework v2.6.7.</br>
-It also uses Hibernate Framework for communication with a database, which was created and is connected to using PostreSQL. 
+It also uses Hibernate Framework for communication with a database, which was created and is connected to using PostgreSQL. 
 
 To run the application open the terminal in the directory in which You cloned the repository and run CompileAndRun.bat script.
 
@@ -26,7 +26,7 @@ It lets clients search for screenings in given time interval, list information a
 Program also validates user input and checks, if it agrees with provided business logic.
 
 ## **Model**
-Image
+![Entity-Relations Diagram](/Ticket%20Booker%20-%20Entity-Relations%20Diagram.png)
 
 ## **Endpoints**
 #### REST endpoints available in the application:
@@ -53,8 +53,8 @@ Image
   <code>***host***/reservation/2?name=Robert&surname=Zieliński</code>
   ```json
   {
-    "10": "ADULT"
-    "11": "CHILD"
+    "210": "ADULT"
+    "211": "CHILD"
   }
   ```
 
@@ -62,13 +62,13 @@ Image
 For a testing purpose I wrote a Powershell scripts which uses `Invoke-RestMethod` command for calling the endpoint and also uses .NET library System.String.</br>
 It accepts an optional argument for port number.</br>
 To run it You need to open new Powershell instance in the directory of the repository touk-internship-2022. You can always change the directory with</br>
-  `cd "Path to directory"`</br>
+        `cd "Path to directory"`</br>
 Then run it with</br>
-  <code>.\ExampleRun.ps1 *portNumber*</code></br>
+	<code>.\ExampleRun.ps1 *portNumber*</code></br>
 or in case it does not work, run this command prior to the previous one</br>
-  <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine</code></br>
+	<code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine</code></br>
 if still does not work, run this command prior to the first one</br>
-  <code>Set-ExecutionPolicy -ExecutionPolicy ByPass -Scope LocalMachine</code></br>
+	<code>Set-ExecutionPolicy -ExecutionPolicy ByPass -Scope LocalMachine</code></br>
   
 ## **Notes & Comments**
 Over the course of developing the application I might have taken a couple of presumptions, and so I'm listing them below:
