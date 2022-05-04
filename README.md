@@ -4,7 +4,7 @@ Repository containing recruitment task from TouK for internship 2022.
 ## **Application Info**
 #### **Technical Info**
 The application is running on Java 17 (Oracle OpenJDK v17) and is using Spring Boot Framework v2.6.7.</br>
-It also uses Hibernate Framework for communication with a database, which was created and is connected to using PostgreSQL. 
+It also uses Hibernate Framework for communication with a database, which was created and is connected to using PostgreSQL, and so to run this application You need to create a PostgreSQl database named Multiplex and insert database url, username and password into \touk-internship-2022\ticket-booker\src\main\resources\application.properties file.
 
 To run the application open the terminal in the directory in which You cloned the repository and run CompileAndRun.bat script.
 
