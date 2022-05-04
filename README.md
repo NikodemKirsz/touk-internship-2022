@@ -62,13 +62,13 @@ Program also validates user input and checks, if it agrees with provided busines
 For a testing purpose I wrote a Powershell scripts which uses `Invoke-RestMethod` command for calling the endpoint and also uses .NET library System.String.</br>
 It accepts an optional argument for port number.</br>
 To run it You need to open new Powershell instance in the directory of the repository touk-internship-2022. You can always change the directory with</br>
-	`cd "Path to directory"`</br>
+    `cd "Path to directory"`</br>
 Then run it with</br>
-	<code>.\ExampleRun.ps1 *portNumber*</code></br>
+    <code>.\ExampleRun.ps1 *portNumber*</code></br>
 or in case it does not work, run this command prior to the previous one</br>
-	<code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine</code></br>
+    <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine</code></br>
 if still does not work, run this command prior to the first one</br>
-	<code>Set-ExecutionPolicy -ExecutionPolicy ByPass -Scope LocalMachine</code></br>
+    <code>Set-ExecutionPolicy -ExecutionPolicy ByPass -Scope LocalMachine</code></br>
   
 ## **Notes & Comments**
 Over the course of developing the application I might have taken a couple of presumptions, and so I'm listing them below:
